@@ -1,7 +1,7 @@
 "use strict";
-
+//console.log(window);
 const Web3Modal = window.Web3Modal.default;
-const WalletConnectProvider = window.WalletConnectProvider.default;
+//const WalletConnectProvider = window.WalletConnectProvider.default;
 
 // Web3modal instance
 let web3Modal
@@ -20,13 +20,6 @@ function web3ModalInit() {
   // Built-in web browser provider (only one can exist as a time)
   // like MetaMask, Brave or Opera is added automatically by Web3modal
   const providerOptions = {
-    walletconnect: {
-      package: WalletConnectProvider,
-      options: {
-        // Mikko's test key - don't copy as your mileage may vary
-        infuraId: "8043bb2cf99347b1bfadfb233c5325c0",
-      }
-    },
   };
 
   web3Modal = new Web3Modal({

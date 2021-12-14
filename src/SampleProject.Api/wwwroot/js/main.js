@@ -9,9 +9,21 @@ let userLoginData = {
 
 var backendPath = 'https://localhost:44343/';
 
+(function ($) {
+    $(document).ready(() => {
+        const isMetaMaskInstalled = () => {
+            //Have to check the ethereum binding on the window object to see if it's installed
+            const { ethereum } = window;
+            return Boolean(ethereum && ethereum.isMetaMask);
+        };
+
+        console.log('isMetaMaskInstalled: ', isMetaMaskInstalled())
+    });
+})(jQuery)
 
 // https://medium.com/valist/how-to-connect-web3-js-to-metamask-in-2020-fee2b2edf58a
 const ethEnabled = async () => {
+    console.log('ok')
   if (window.ethereum) {
     await window.ethereum.send('eth_requestAccounts');
     window.web3 = new Web3(window.ethereum);
