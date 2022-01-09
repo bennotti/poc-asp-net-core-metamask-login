@@ -41,7 +41,7 @@
     $(document).ready(() => {
         const isMetaMaskInstalled = MetaMaskOnboarding.isMetaMaskInstalled();
         const onboarding = new MetaMaskOnboarding();
-        const callToActionButton = $('#callToActionButton');
+        const callToActionButton = $('#callToActionMetamaskButton');
         let accounts;
         const updateButton = () => {
             if (!isMetaMaskInstalled) {
